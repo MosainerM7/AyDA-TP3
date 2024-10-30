@@ -1,0 +1,68 @@
+Nombre: Mosainer Martín
+Trabajo Práctico 3: AyDA
+
+Ejercicio 1:
+Respuesta:
+Para analizar la cantidad de llamadas realizadas por 𝐹(𝑛),
+el algoritmo recursivo que calcula n!,
+ primero debemos definir el algoritmo:
+
+código en python:
+def F(n):
+    if n == 0:
+        return 1
+    else:
+        return n * F(n - 1)
+
+Este algoritmo calcula el factorial de 
+𝑛
+n de manera recursiva. Observemos que:
+
+Para 
+𝑛
+=
+0
+n=0, se realiza una sola llamada a la función y la ejecución termina, ya que 
+𝐹(0)=1
+Para cualquier 𝑛>0, la función 𝐹(𝑛) llama a 𝐹(𝑛−1), y así sucesivamente, hasta que alcanza el caso base 
+𝐹(0).
+
+
+Definición de la relación de recurrencia para el número de llamadas:
+Sea 
+𝑇
+(
+𝑛
+)
+T(n) el número total de llamadas a la función F cuando calculamos 
+𝐹(𝑛) Si n=0, solo se realiza una llamada (caso base): T(0)=1
+
+Si n>0, la función F(n) realiza una llamada a F(n−1), más la llamada actual, por lo que: 
+T(n)=T(n−1)+1
+
+Resolver la relación de recurrencia
+
+Tenemos la relación de recurrencia: T(n)=T(n−1)+1
+con la condición inicial: T(0)=1.
+
+Para resolver esta relación, expandimos los términos sucesivos de la recurrencia:
+Entonces:
+
+T(n)=T(n−1)+1
+
+=(T(n−2)+1)+1=T(n−2)+2
+
+=T(n−3)+3
+.
+.
+.
+=T(0)+n
+
+Sustituyendo T(0)=1, obtenemos:
+
+     T(n)=1+n
+    
+
+     Solución final
+Por lo tanto, el número de llamadas realizadas por 
+F(n) es: T(n)=n+1
